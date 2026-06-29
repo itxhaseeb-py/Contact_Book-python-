@@ -1,0 +1,84 @@
+Contact Book Logic (System Behavior)
+1. Main storage idea
+The system stores all contacts in a single container.
+Each contact name acts as a unique identifier (key).
+Each key points to a record (data object) containing details.
+2. Structure of one contact
+
+Each contact record contains:
+
+phone number
+email (optional)
+address (optional)
+any other fields you want
+
+So logically:
+
+Name → Contact Details
+
+3. Add Contact process
+
+When adding a contact:
+
+Take input (name + details)
+Check if name already exists
+If yes → decide overwrite or reject
+If no → store new entry
+Save name as key
+Save details as value
+4. Get / View Contact process
+
+When searching a contact:
+
+Take name as input
+Check if name exists in storage
+If found → return full details
+If not found → show “not found”
+5. Update Contact process
+
+There are two types:
+
+A. Update single field
+Find contact by name
+Change only one detail (like phone or email)
+Keep other data unchanged
+B. Replace full contact
+Find contact by name
+Replace entire record with new one
+6. Delete Contact process
+Take name as input
+Check if exists
+If yes → remove it completely
+If no → do nothing / show error message
+7. Show all contacts process
+Go through all stored entries
+Display each name with its details
+8. Search behavior types
+Exact search
+Full name must match exactly
+Partial search (advanced)
+Check if input text exists inside stored names
+Return all matches
+9. System behavior rules (important mindset)
+Names must be unique (otherwise overwrite happens)
+Storage is fast for direct lookup by name
+Searching by partial text is slower because it must check everything
+Each contact is independent data object
+Changing one contact does not affect others
+10. Mental model (how to think while coding)
+
+Think like this:
+
+“I have a box of labeled drawers”
+Each drawer label = contact name
+Inside each drawer = contact details
+You open drawer by label, not by position
+
+
+
+
+
+
+
+
+
